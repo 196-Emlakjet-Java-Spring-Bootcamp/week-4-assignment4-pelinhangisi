@@ -20,11 +20,13 @@ public class AdvertisementController {
         this.advertisementService = advertisementService;
     }
 
-    @PostMapping
+    @PostMapping("/create")
     public void createAdvertisement(@RequestBody AdvertisementDto advertisementDto){
         advertisementService.createAdvertisement(advertisementDto);
     }
 
+
+    // SQL sorguları oluşturulduktan sonra GetMapping ile yol gösterme
     @GetMapping("/date")
     public List<Advertisement> findAdvertisementByCreatedAtBetween(@RequestParam(name="startDate") LocalDateTime startDate,@RequestParam("endDate") LocalDateTime endDate){
         return advertisementService.findAdvertisementByCreatedAtBetween(startDate,endDate);

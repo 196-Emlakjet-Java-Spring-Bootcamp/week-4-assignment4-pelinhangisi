@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfiguration {
 
-    //get values from properties place holder
+    // RabbitTemplate ve Listener kullanabilmek için oluşturulan config dosyası
     @Value("${queue.name}")
     private String queueName;
 

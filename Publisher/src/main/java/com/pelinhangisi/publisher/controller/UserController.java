@@ -21,6 +21,8 @@ public class UserController {
         this.userService = userService;
     }
 
+
+    //Postman üzerinden istek atabilmek adına yol
     @PostMapping("/users")
     public void createUser(@RequestBody UserDto userDto){
         userService.createUser(userDto);

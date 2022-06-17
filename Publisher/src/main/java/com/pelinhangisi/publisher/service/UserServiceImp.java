@@ -21,6 +21,7 @@ public class UserServiceImp implements UserService {
         this.queue = queue;
     }
 
+    // 50 adet mesaj gönderimi için oluşturulan algoritma
     @Override
     public void createUser(UserDto userDto) {
         int i = 1;

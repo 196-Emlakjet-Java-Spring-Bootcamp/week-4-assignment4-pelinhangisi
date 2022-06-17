@@ -10,6 +10,8 @@ import java.util.List;
 public interface AdvertisementService {
         void createAdvertisement(AdvertisementDto advertisementDto);
 
+        // Sorgu Servisi
+
         List<Advertisement> findAdvertisementByCreatedAtBetween(LocalDateTime startDate, LocalDateTime endDate);
 
         List<Advertisement> findAdvertisementByCreatedAtOrderByAsc();
