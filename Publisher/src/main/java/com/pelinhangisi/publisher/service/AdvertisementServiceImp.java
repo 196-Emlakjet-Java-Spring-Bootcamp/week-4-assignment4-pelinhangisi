@@ -3,6 +3,7 @@ package com.pelinhangisi.publisher.service;
 import com.pelinhangisi.publisher.dao.AdvertisementRepository;
 import com.pelinhangisi.publisher.dto.AdvertisementDto;
 import com.pelinhangisi.publisher.entity.Advertisement;
+import org.apache.tomcat.jni.Local;
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,13 +40,13 @@ public class AdvertisementServiceImp implements AdvertisementService {
     }
 
     @Override
-    public List<Advertisement> findAdvertisementByCreatedAtOrderByAsc() {
-        return advertisementRepository.findAdvertisementByCreatedAtOrderByAsc();
+    public List<Advertisement> findAdvertisementByCreatedAtOrderByCreatedAtAsc(LocalDateTime time) {
+        return advertisementRepository.findAdvertisementByCreatedAtOrderByCreatedAtAsc(time);
     }
 
     @Override
-    public List<Advertisement> findAdvertisementByCreatedAtOrderByDesc() {
-        return advertisementRepository.findAdvertisementByCreatedAtOrderByDesc();
+    public List<Advertisement> findAdvertisementByCreatedAtOrderByCreatedAtDesc(LocalDateTime time) {
+        return advertisementRepository.findAdvertisementByCreatedAtOrderByCreatedAtDesc(time);
     }
 
     @Override

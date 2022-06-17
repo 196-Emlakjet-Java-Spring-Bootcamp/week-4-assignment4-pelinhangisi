@@ -3,6 +3,7 @@ package com.pelinhangisi.publisher.controller;
 import com.pelinhangisi.publisher.dto.AdvertisementDto;
 import com.pelinhangisi.publisher.entity.Advertisement;
 import com.pelinhangisi.publisher.service.AdvertisementService;
+import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -26,20 +27,20 @@ public class AdvertisementController {
     }
 
 
-    // SQL sorguları oluşturulduktan sonra GetMapping ile yol gösterme
+    // SQL sorguları oluşturulduktan sonra
     @GetMapping("/date")
     public List<Advertisement> findAdvertisementByCreatedAtBetween(@RequestParam(name="startDate") LocalDateTime startDate,@RequestParam("endDate") LocalDateTime endDate){
         return advertisementService.findAdvertisementByCreatedAtBetween(startDate,endDate);
     }
 
     @GetMapping("/createfirst")
-    public List<Advertisement> findAdvertisementByCreatedAtOrderByAsc() {
-        return advertisementService.findAdvertisementByCreatedAtOrderByAsc();
+    public List<Advertisement> findAdvertisementByCreatedAtOrderByCreatedAtAsc(LocalDateTime time) {
+        return advertisementService.findAdvertisementByCreatedAtOrderByCreatedAtAsc(time);
     }
 
     @GetMapping("/createlast")
-    public List<Advertisement> findAdvertisementByCreatedAtOrderByDesc(){
-        return advertisementService.findAdvertisementByCreatedAtOrderByDesc();
+    public List<Advertisement> findAdvertisementByCreatedAtOrderByCreatedAtDesc(LocalDateTime time){
+        return advertisementService.findAdvertisementByCreatedAtOrderByCreatedAtDesc(time);
     }
 
     @GetMapping("/title")

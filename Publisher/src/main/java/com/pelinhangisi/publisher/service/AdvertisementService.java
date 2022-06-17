@@ -14,9 +14,9 @@ public interface AdvertisementService {
 
         List<Advertisement> findAdvertisementByCreatedAtBetween(LocalDateTime startDate, LocalDateTime endDate);
 
-        List<Advertisement> findAdvertisementByCreatedAtOrderByAsc();
+        List<Advertisement> findAdvertisementByCreatedAtOrderByCreatedAtAsc(LocalDateTime time);
 
-        List<Advertisement> findAdvertisementByCreatedAtOrderByDesc();
+        List<Advertisement> findAdvertisementByCreatedAtOrderByCreatedAtDesc(LocalDateTime time);
 
         List<Advertisement> findAdvertisementByTitleContainingIgnoreCase(String title);
 
