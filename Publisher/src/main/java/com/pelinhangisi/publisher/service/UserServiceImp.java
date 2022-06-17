@@ -3,6 +3,7 @@ package com.pelinhangisi.publisher.service;
 
 import com.pelinhangisi.publisher.dto.UserDto;
 
+
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class UserServiceImp implements UserService {
     private Queue queue;
 
     @Autowired
-    public UserServiceImp(@SuppressWarnings("SpringJavaInjectionPointsAutowiringInspection") RabbitTemplate rabbitTemplate, Queue queue) {
+    public UserServiceImp(RabbitTemplate rabbitTemplate, Queue queue) {
         this.rabbitTemplate = rabbitTemplate;
         this.queue = queue;
     }
