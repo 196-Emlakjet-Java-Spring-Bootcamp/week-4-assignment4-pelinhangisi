@@ -28,4 +28,8 @@ public class User implements Serializable {
 
         @Column(name ="email")
         private String email;
+
+        public User(Long id) {
+                this.id = id;
+        }
 }

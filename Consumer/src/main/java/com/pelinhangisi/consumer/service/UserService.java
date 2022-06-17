@@ -23,7 +23,7 @@ public class UserService {
     }
 
     @RabbitListener(queues = "${queue.name}")
-    public void createUser(@Payload UserDto userDto) throws InterruptedException{
+    public void createUser(@Payload UserDto userDto){
         userDto.setFirstName(firstNameHelper.generateFirstName());
         userDto.setLastName(firstNameHelper.generateFirstName());
         userDto.setEmail(emailGeneratorHelper.generateEmail(userDto.getFirstName(),userDto.getLastName()));
