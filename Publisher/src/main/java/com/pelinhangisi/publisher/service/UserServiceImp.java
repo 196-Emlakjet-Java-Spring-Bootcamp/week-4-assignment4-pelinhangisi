@@ -1,7 +1,8 @@
 package com.pelinhangisi.publisher.service;
 
 
-import com.pelinhangisi.publisher.entity.User;
+import com.pelinhangisi.publisher.dto.UserDto;
+
 import org.springframework.amqp.core.Queue;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,8 +23,7 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public void createUser(User user) {
-
-        rabbitTemplate.convertAndSend(this.queue.getName(), user);
+    public void createUser(UserDto userDto) {
+        rabbitTemplate.convertAndSend(this.queue.getName(), userDto);
     }
 }

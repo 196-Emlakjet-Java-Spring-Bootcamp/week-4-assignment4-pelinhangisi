@@ -1,7 +1,8 @@
 package com.pelinhangisi.publisher.controller;
 
 
-import com.pelinhangisi.publisher.entity.User;
+import com.pelinhangisi.publisher.dto.UserDto;
+
 import com.pelinhangisi.publisher.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -21,7 +22,7 @@ public class UserController {
     }
 
     @PostMapping
-    public void createUser(@RequestBody User user){
-        userService.createUser(user);
+    public void createUser(@RequestBody UserDto userDto){
+        userService.createUser(userDto);
     }
 }

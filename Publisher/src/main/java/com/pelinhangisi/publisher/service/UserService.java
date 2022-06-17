@@ -1,8 +1,9 @@
 package com.pelinhangisi.publisher.service;
 
 
-import com.pelinhangisi.publisher.entity.User;
+import com.pelinhangisi.publisher.dto.UserDto;
+
 
 public interface UserService {
-    void createUser(User user);
+    void createUser(UserDto userDto);
 }
