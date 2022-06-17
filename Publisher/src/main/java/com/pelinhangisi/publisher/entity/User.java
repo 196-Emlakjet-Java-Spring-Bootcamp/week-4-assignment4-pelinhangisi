@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 @Entity
 @Data
@@ -28,5 +29,8 @@ public class User implements Serializable {
 
     @Column(name ="email")
     private String email;
+
+    @OneToMany(mappedBy = "user")
+    private Set<Advertisement> advertisements;
 
 }
