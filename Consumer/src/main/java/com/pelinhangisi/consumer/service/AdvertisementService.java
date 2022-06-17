@@ -44,4 +44,6 @@ public class AdvertisementService {
         advertisementRepository.save(advertisement);
     }
 
+
+    //consumer helperlar yazılıp service içinde kullanıldı
 }
